@@ -15,11 +15,12 @@ class Mapterrain < Formula
       -X main.date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/terrain"
-    mv bin/"mapterrain", bin/"terrain"
-    bin.install_symlink "terrain" => "mapterrain"
+    # Primary binary is 'mapterrain' (from formula name).
+    # Add 'terrain' as a symlink for convenience.
+    (bin/"terrain").make_symlink(bin/"mapterrain")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/terrain version")
+    assert_match version.to_s, shell_output("#{bin}/mapterrain version")
   end
 end

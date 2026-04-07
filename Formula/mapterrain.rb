@@ -14,7 +14,8 @@ class Mapterrain < Formula
       -X main.commit=brew
       -X main.date=#{time.iso8601}
     ]
-    system "go", "build", "-ldflags", ldflags.join(" "), "-o", bin/"terrain", "./cmd/terrain"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/terrain"
+    mv bin/"mapterrain", bin/"terrain"
     bin.install_symlink "terrain" => "mapterrain"
   end
 

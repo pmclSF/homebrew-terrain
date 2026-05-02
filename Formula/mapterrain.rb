@@ -2,7 +2,7 @@ class Mapterrain < Formula
   desc "Signal-first test intelligence CLI"
   homepage "https://github.com/pmclSF/terrain"
   url "https://github.com/pmclSF/terrain/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "6b6af4c87b0ea7c199c418ac24627e4ae96eb7f6b1225c55ec6e2d2e5c05170e"
+  sha256 "170c34b1856cdb4a4344a526380b3f34c3c4770c59b277749f7ce2cb8b996f73"
   license "Apache-2.0"
 
   depends_on "go" => :build
